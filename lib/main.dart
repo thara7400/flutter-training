@@ -43,19 +43,73 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Row(
+        children: [
+          Expanded(
+            child: Container(),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: double.infinity,
+              color: Colors.grey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const AspectRatio(
+                    aspectRatio: 1,
+                    child: ColoredBox(
+                      color: Colors.green,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 16,
+                            ),
+                            Text(
+                              '**℃',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.labelLarge?.
+                                  copyWith(color: Colors.blue),
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 16,
+                            ),
+                            Text(
+                              '**℃',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.labelLarge?.
+                                  copyWith(color: Colors.red),
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: Container(),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
